@@ -1,6 +1,7 @@
 {
   "version": 2,
   "buildCommand": "vite build",
+  "installCommand": "npm install --legacy-peer-deps",
   "outputDirectory": "dist",
   "functions": {
     "api/index.ts": {
