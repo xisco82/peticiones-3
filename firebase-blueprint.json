@@ -1,0 +1,125 @@
+{
+  "entities": {
+    "User": {
+      "title": "User",
+      "description": "User profile and role record",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "maxLength": 128 },
+        "name": { "type": "string", "maxLength": 150 },
+        "aliases": { "type": "array" },
+        "email": { "type": "string", "maxLength": 200 },
+        "phone": { "type": "string", "maxLength": 50 },
+        "role": { "type": "string", "enum": ["admin", "employee"] },
+        "status": { "type": "string", "enum": ["active", "deactivated", "deleted"] },
+        "createdAt": { "type": "string", "maxLength": 100 }
+      },
+      "required": ["id", "name", "role", "status"]
+    },
+    "Schedule": {
+      "title": "Schedule",
+      "description": "Weekly shift schedule and versions",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "maxLength": 128 },
+        "weekStartDate": { "type": "string", "maxLength": 20 },
+        "weekEndDate": { "type": "string", "maxLength": 20 },
+        "weekLabel": { "type": "string", "maxLength": 150 },
+        "status": { "type": "string", "enum": ["draft", "published"] },
+        "version": { "type": "number" },
+        "publishedAt": { "type": "string", "maxLength": 100 },
+        "changeReason": { "type": "string", "maxLength": 500 },
+        "rows": { "type": "array" },
+        "rawInputText": { "type": "string", "maxLength": 50000 },
+        "createdAt": { "type": "string", "maxLength": 100 },
+        "updatedAt": { "type": "string", "maxLength": 100 }
+      },
+      "required": ["id", "weekStartDate", "weekEndDate", "weekLabel", "status", "version"]
+    },
+    "Request": {
+      "title": "Request",
+      "description": "Shift change, day off, or absence request",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "maxLength": 128 },
+        "employeeId": { "type": "string", "maxLength": 128 },
+        "employeeName": { "type": "string", "maxLength": 150 },
+        "type": { "type": "string", "maxLength": 50 },
+        "status": { "type": "string", "enum": ["pending", "approved", "rejected", "cancelled"] },
+        "reason": { "type": "string", "maxLength": 1000 },
+        "notes": { "type": "string", "maxLength": 1000 },
+        "createdAt": { "type": "string", "maxLength": 100 }
+      },
+      "required": ["id", "employeeId", "status", "createdAt"]
+    },
+    "Incident": {
+      "title": "Incident",
+      "description": "Workplace or shift incident item",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "maxLength": 128 },
+        "employeeId": { "type": "string", "maxLength": 128 },
+        "employeeName": { "type": "string", "maxLength": 150 },
+        "category": { "type": "string", "maxLength": 100 },
+        "description": { "type": "string", "maxLength": 2000 },
+        "status": { "type": "string", "enum": ["open", "investigating", "resolved"] },
+        "resolution": { "type": "string", "maxLength": 2000 },
+        "createdAt": { "type": "string", "maxLength": 100 }
+      },
+      "required": ["id", "employeeId", "description", "status", "createdAt"]
+    },
+    "AuditLog": {
+      "title": "AuditLog",
+      "description": "Immutable audit log entry",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "maxLength": 128 },
+        "timestamp": { "type": "string", "maxLength": 100 },
+        "actorId": { "type": "string", "maxLength": 128 },
+        "actorName": { "type": "string", "maxLength": 150 },
+        "action": { "type": "string", "maxLength": 100 },
+        "details": { "type": "string", "maxLength": 5000 }
+      },
+      "required": ["id", "timestamp", "actorId", "action"]
+    },
+    "AppSettings": {
+      "title": "AppSettings",
+      "description": "Application settings and flags",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "maxLength": 128 },
+        "companyName": { "type": "string", "maxLength": 150 },
+        "allowEmployeeViewGeneralSchedule": { "type": "boolean" },
+        "allowShiftTrading": { "type": "boolean" },
+        "timezone": { "type": "string", "maxLength": 100 }
+      },
+      "required": ["id", "companyName"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": "User",
+      "description": "User profiles and credentials"
+    },
+    "/schedules/{scheduleId}": {
+      "schema": "Schedule",
+      "description": "Weekly published and draft schedules"
+    },
+    "/requests/{requestId}": {
+      "schema": "Request",
+      "description": "Employee requests for shift changes, days off and absences"
+    },
+    "/incidents/{incidentId}": {
+      "schema": "Incident",
+      "description": "Incidents reported by employees or managers"
+    },
+    "/audit_logs/{logId}": {
+      "schema": "AuditLog",
+      "description": "Audit trail entries"
+    },
+    "/settings/{settingId}": {
+      "schema": "AppSettings",
+      "description": "Global application configuration"
+    }
+  }
+}

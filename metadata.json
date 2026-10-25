@@ -1,0 +1,8 @@
+{
+  "name": "Hotel HM Gran Fiesta - Gestión de Turnos y Solicitudes",
+  "description": "Aplicación web profesional para la gestión de cuadrantes semanales, turnos de trabajo, cambios, ausencias e incidencias con acceso diferenciado para administradores y empleados.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

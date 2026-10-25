@@ -1,0 +1,92 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Default-deny catch-all (Pillar 1)
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    // Hardened Global Helpers
+    function isValidId(id) {
+      return id is string && id.size() <= 128 && id.matches('^[a-zA-Z0-9_\\-]+$');
+    }
+
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function isAdmin() {
+      return isSignedIn() && (
+        request.auth.token.email == 'xiscooquin@gmail.com' ||
+        request.auth.token.email == 'xiscoquin@gmail.com' ||
+        request.auth.token.email == 'xiscoquin1@gmail.com' ||
+        request.auth.token.email == 'hmgfiesta@gmail.com' ||
+        request.auth.token.email == 'admin@empresa.com' ||
+        exists(/databases/$(database)/documents/admins/$(request.auth.uid))
+      );
+    }
+
+    function isOwner(userId) {
+      return isSignedIn() && request.auth.uid == userId;
+    }
+
+    // Connection testing
+    match /test/connection {
+      allow read, write: if true;
+    }
+
+    match /connection_tests/{testId=**} {
+      allow read, write: if true;
+    }
+
+    // Users collection
+    match /users/{userId} {
+      allow get: if isSignedIn() && (isOwner(userId) || isAdmin());
+      allow list: if isAdmin();
+      allow create, update, delete: if isAdmin();
+    }
+
+    // Admins lookup
+    match /admins/{adminId} {
+      allow read: if isSignedIn();
+      allow write: if isAdmin();
+    }
+
+    // Weekly Schedules
+    match /schedules/{scheduleId} {
+      allow get, list: if isSignedIn() && (resource.data.status == 'published' || isAdmin());
+      allow create, update, delete: if isAdmin();
+    }
+
+    // Requests (shift changes, days off, absences)
+    match /requests/{requestId} {
+      allow get: if isSignedIn() && (resource.data.employeeId == request.auth.uid || isAdmin());
+      allow list: if isSignedIn() && (resource.data.employeeId == request.auth.uid || isAdmin());
+      allow create: if isSignedIn() && (request.resource.data.employeeId == request.auth.uid || isAdmin());
+      allow update: if isSignedIn() && (resource.data.employeeId == request.auth.uid || isAdmin());
+      allow delete: if isAdmin();
+    }
+
+    // Incidents
+    match /incidents/{incidentId} {
+      allow get: if isSignedIn() && (resource.data.employeeId == request.auth.uid || isAdmin());
+      allow list: if isSignedIn() && (resource.data.employeeId == request.auth.uid || isAdmin());
+      allow create: if isSignedIn();
+      allow update, delete: if isAdmin();
+    }
+
+    // Audit logs (immutable write/read)
+    match /audit_logs/{logId} {
+      allow read: if isAdmin();
+      allow create: if isSignedIn();
+      allow update, delete: if false;
+    }
+
+    // App Settings
+    match /settings/{settingId} {
+      allow read: if isSignedIn();
+      allow write: if isAdmin();
+    }
+  }
+}

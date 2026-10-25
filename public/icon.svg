@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e1b4b" />
+      <stop offset="50%" stop-color="#312e81" />
+      <stop offset="100%" stop-color="#0f172a" />
+    </linearGradient>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fbbf24" />
+      <stop offset="100%" stop-color="#d97706" />
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6366f1" />
+      <stop offset="100%" stop-color="#4f46e5" />
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#000" flood-opacity="0.35" />
+    </filter>
+  </defs>
+
+  <!-- Background rounded rectangle -->
+  <rect width="512" height="512" rx="112" fill="url(#bg)" />
+
+  <!-- Subtle inner border -->
+  <rect x="16" y="16" width="480" height="480" rx="96" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="4" />
+
+  <!-- Central Crest / Badge -->
+  <g filter="url(#shadow)" transform="translate(256, 256)">
+    <!-- Hotel Shield -->
+    <path d="M-130,-120 L130,-120 L130,20 C130,110 0,165 0,165 C0,165 -130,110 -130,20 Z" fill="rgba(255,255,255,0.06)" stroke="url(#gold)" stroke-width="6" />
+
+    <!-- Calendar / Shift Grid Icon -->
+    <rect x="-85" y="-85" width="170" height="135" rx="18" fill="url(#accent)" stroke="rgba(255,255,255,0.25)" stroke-width="4" />
+    <path d="M-85,-45 L85,-45" stroke="rgba(255,255,255,0.3)" stroke-width="4" />
+    
+    <!-- Calendar rings -->
+    <circle cx="-45" cy="-95" r="8" fill="#fbbf24" />
+    <circle cx="45" cy="-95" r="8" fill="#fbbf24" />
+
+    <!-- Grid blocks (shifts) -->
+    <rect x="-65" y="-30" width="30" height="20" rx="5" fill="#ffffff" fill-opacity="0.9" />
+    <rect x="-20" y="-30" width="30" height="20" rx="5" fill="#fbbf24" />
+    <rect x="25" y="-30" width="30" height="20" rx="5" fill="#34d399" />
+    <rect x="-65" y="5" width="30" height="20" rx="5" fill="#38bdf8" />
+    <rect x="-20" y="5" width="30" height="20" rx="5" fill="#ffffff" fill-opacity="0.9" />
+    <rect x="25" y="5" width="30" height="20" rx="5" fill="#fbbf24" />
+
+    <!-- Stars representing hotel quality -->
+    <path d="M-55,-135 L-52,-145 L-42,-145 L-50,-151 L-47,-161 L-55,-155 L-63,-161 L-60,-151 L-68,-145 L-58,-145 Z" fill="url(#gold)" />
+    <path d="M0,-140 L3,-150 L13,-150 L5,-156 L8,-166 L0,-160 L-8,-166 L-5,-156 L-13,-150 L-3,-150 Z" fill="url(#gold)" />
+    <path d="M55,-135 L58,-145 L68,-145 L60,-151 L63,-161 L55,-155 L47,-161 L50,-151 L42,-145 L52,-145 Z" fill="url(#gold)" />
+
+    <!-- HM Monogram at bottom -->
+    <text x="0" y="110" font-family="system-ui, -apple-system, sans-serif" font-weight="900" font-size="34" fill="#ffffff" text-anchor="middle" letter-spacing="4">HM</text>
+    <text x="0" y="132" font-family="system-ui, -apple-system, sans-serif" font-weight="700" font-size="14" fill="#fbbf24" text-anchor="middle" letter-spacing="3">GRAN FIESTA</text>
+  </g>
+</svg>

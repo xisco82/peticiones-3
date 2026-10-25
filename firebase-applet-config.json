@@ -1,0 +1,12 @@
+{
+  "projectId": "peticiones-y-turnos",
+  "appId": "1:727694789224:web:f7b568750058aa08c409dd",
+  "apiKey": "AIzaSyDZZ12Z2s3o45ZF2yf4Xn8sxy3dEyAd7g4",
+  "authDomain": "peticiones-y-turnos.firebaseapp.com",
+  "firestoreDatabaseId": "ai-studio-gestindeturnosys-bc2b5f6a-0c49-4f97-a8be-66476272473a",
+  "storageBucket": "peticiones-y-turnos.firebasestorage.app",
+  "messagingSenderId": "727694789224",
+  "measurementId": "",
+  "oAuthClientId": "727694789224-hrk2ihp1na6g0rv4h2nmlgcihn3626tt.apps.googleusercontent.com",
+  "recaptchaSiteKey": ""
+}

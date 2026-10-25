@@ -1,0 +1,255 @@
+{
+  "metadata": {
+    "timestamp": "2026-10-22T11:56:34.606Z",
+    "notes": "Test de verificación de copias",
+    "usersCount": 12,
+    "schedulesCount": 0
+  },
+  "data": {
+    "users": [
+      {
+        "id": "admin-1",
+        "name": "Administrador Principal",
+        "aliases": [
+          "Admin",
+          "Dirección"
+        ],
+        "email": "xiscoquin@gmail.com",
+        "phone": "+34 600 000 000",
+        "role": "admin",
+        "status": "active",
+        "tempPassword": "3090",
+        "mustChangePassword": false,
+        "createdAt": "2026-10-22T09:37:00.648Z"
+      },
+      {
+        "id": "emp-1",
+        "name": "Francisco Gallego Huguet",
+        "aliases": [
+          "Francisco Gallego",
+          "Gallego",
+          "Fran Gallego",
+          "Xisco",
+          "Cisco",
+          "Fran",
+          "Paco"
+        ],
+        "email": "francisco.gallego@pendiente.es",
+        "phone": "",
+        "role": "employee",
+        "status": "active",
+        "tempPassword": "emp1234",
+        "mustChangePassword": false,
+        "createdAt": "2026-10-22T09:37:00.648Z"
+      },
+      {
+        "id": "emp-2",
+        "name": "Aliz Varga",
+        "aliases": [
+          "Aliz",
+          "Varga"
+        ],
+        "email": "aliz.varga@pendiente.es",
+        "phone": "",
+        "role": "employee",
+        "status": "active",
+        "tempPassword": "emp1234",
+        "mustChangePassword": false,
+        "createdAt": "2026-10-22T09:37:00.648Z"
+      },
+      {
+        "id": "emp-3",
+        "name": "Oscar David Millán Vivancos",
+        "aliases": [
+          "Oscar",
+          "Óscar",
+          "Oscar David",
+          "Millán",
+          "Millan"
+        ],
+        "email": "oscar.millan@pendiente.es",
+        "phone": "",
+        "role": "employee",
+        "status": "active",
+        "tempPassword": "emp1234",
+        "mustChangePassword": false,
+        "createdAt": "2026-10-22T09:37:00.648Z"
+      },
+      {
+        "id": "emp-4",
+        "name": "Francisco Javier Segundo Moya",
+        "aliases": [
+          "Javier",
+          "Javi",
+          "Fco. Javier",
+          "Segundo"
+        ],
+        "email": "javier.segundo@pendiente.es",
+        "phone": "",
+        "role": "employee",
+        "status": "active",
+        "tempPassword": "emp1234",
+        "mustChangePassword": false,
+        "createdAt": "2026-10-22T09:37:00.648Z"
+      },
+      {
+        "id": "emp-5",
+        "name": "Inés Ruiz Morey",
+        "aliases": [
+          "Inés",
+          "Ines",
+          "Ruiz"
+        ],
+        "email": "ines.ruiz@pendiente.es",
+        "phone": "",
+        "role": "employee",
+        "status": "active",
+        "tempPassword": "emp1234",
+        "mustChangePassword": false,
+        "createdAt": "2026-10-22T09:37:00.648Z"
+      },
+      {
+        "id": "emp-6",
+        "name": "Josep Vidal Pérez",
+        "aliases": [
+          "Josep",
+          "Vidal"
+        ],
+        "email": "josep.vidal@pendiente.es",
+        "phone": "",
+        "role": "employee",
+        "status": "active",
+        "tempPassword": "emp1234",
+        "mustChangePassword": false,
+        "createdAt": "2026-10-22T09:37:00.648Z"
+      },
+      {
+        "id": "emp-7",
+        "name": "Miriam García Heras",
+        "aliases": [
+          "Miriam",
+          "García",
+          "Garcia"
+        ],
+        "email": "miriam.garcia@pendiente.es",
+        "phone": "",
+        "role": "employee",
+        "status": "active",
+        "tempPassword": "emp1234",
+        "mustChangePassword": false,
+        "createdAt": "2026-10-22T09:37:00.648Z"
+      },
+      {
+        "id": "emp-8",
+        "name": "Carlos Rodríguez Martín",
+        "aliases": [
+          "Carlos",
+          "Rodríguez",
+          "Rodriguez"
+        ],
+        "email": "carlos.rodriguez@pendiente.es",
+        "phone": "",
+        "role": "employee",
+        "status": "active",
+        "tempPassword": "emp1234",
+        "mustChangePassword": false,
+        "createdAt": "2026-10-22T09:37:00.648Z"
+      },
+      {
+        "id": "emp-9",
+        "name": "Jakeline Munera Zapata",
+        "aliases": [
+          "Jakeline",
+          "Munera",
+          "Jaqueline"
+        ],
+        "email": "jakeline.munera@pendiente.es",
+        "phone": "",
+        "role": "employee",
+        "status": "active",
+        "tempPassword": "emp1234",
+        "mustChangePassword": false,
+        "createdAt": "2026-10-22T09:37:00.648Z"
+      },
+      {
+        "id": "emp-10",
+        "name": "Antonio Torres Mulet",
+        "aliases": [
+          "Antonio",
+          "Toni",
+          "Torres"
+        ],
+        "email": "antonio.torres@pendiente.es",
+        "phone": "",
+        "role": "employee",
+        "status": "active",
+        "tempPassword": "emp1234",
+        "mustChangePassword": false,
+        "createdAt": "2026-10-22T09:37:00.648Z"
+      },
+      {
+        "id": "emp-11",
+        "name": "Lucía Fernández",
+        "aliases": [
+          "Lucia",
+          "Lucía"
+        ],
+        "email": "lucia.fernandez@pendiente.es",
+        "phone": "",
+        "role": "employee",
+        "status": "active",
+        "tempPassword": "emp1234",
+        "mustChangePassword": false,
+        "createdAt": "2026-10-22T09:37:00.648Z"
+      }
+    ],
+    "schedules": [],
+    "shiftRequests": [],
+    "daysOffRequests": [],
+    "absenceRequests": [],
+    "incidents": [],
+    "notifications": [
+      {
+        "id": "notif-1792666618188-z9fbu",
+        "userId": "admin-1",
+        "title": "Nuevo empleado registrado",
+        "message": "Marta Soler Test se ha registrado con el correo marta.soler.test@empresa.com.",
+        "type": "request_created",
+        "read": false,
+        "createdAt": "2026-10-22T10:56:58.188Z"
+      }
+    ],
+    "auditLogs": [
+      {
+        "id": "log-init",
+        "timestamp": "2026-10-22T09:37:00.648Z",
+        "userId": "admin-1",
+        "userName": "Sistema",
+        "action": "Inicialización de la base de datos",
+        "entity": "ajustes",
+        "notes": "Cargadas 10 cuentas de empleados iniciales sin datos demo"
+      }
+    ],
+    "settings": {
+      "generalScheduleVisibleToEmployees": true,
+      "requireFirstPasswordChange": false,
+      "deductBreaks": false,
+      "breakMinutes": 0,
+      "warningRestBetweenShiftsHours": 12,
+      "warningMaxDailyHours": 9,
+      "warningMaxWeeklyHours": 40,
+      "warningMinWeeklyRestDays": 1.5,
+      "timezone": "Europe/Madrid",
+      "emailSenderDomain": "empresa.com"
+    },
+    "sentEmails": [
+      {
+        "id": "email-1792666618188-2r5am",
+        "to": "xiscoquin@gmail.com",
+        "subject": "Novedad en Hotel HM Gran Fiesta: Nuevo empleado registrado",
+        "body": "Hola,\n\nTienes una novedad en la aplicación de Hotel HM Gran Fiesta: Nuevo empleado registrado.\n\nPor favor, entra a la app para revisar los detalles.\n\nAtentamente,\nHotel HM Gran Fiesta",
+        "date": "2026-10-22T10:56:58.188Z"
+      }
+    ]
+  }
+}
